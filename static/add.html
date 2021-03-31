@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>车牌违规添加</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/add_car.js"></script>
+    <script src="js/add_car_record.js"></script>
+    <script src="js/search_car_id.js"></script>
+</head>
+<body>
+<div>
+
+    <div style="width: 100%;margin: 20px;">
+        <input id="carno" type="text" placeholder="请输入车牌号">
+        <input id="owner" type="text" placeholder="请输入车主名">
+        <input id="brand" type="text" placeholder="请输入车标">
+        <button onclick="add_car()">车辆添加</button>
+        <input id="search_carno" type="text" placeholder="请输入车牌号">
+        <button onclick="search_car_id()">车辆信息id查询</button>
+    </div>
+
+
+    <div style="width: 100%;margin: 20px;">
+        <input id="car_id" type="text" placeholder="车辆信息id">
+        <input id="reason" type="text" placeholder="违章原因">
+        <input id="punish" type="text" placeholder="处罚方式">
+        <input id="makedate" type="date">
+        <button onclick="add_car_record()">车辆违章添加</button>
+        <hr>
+    </div>
+    <div>
+        <button onclick="window.location.href = 'index.html'" style="margin-left: 550px">
+            车牌违规查询
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
