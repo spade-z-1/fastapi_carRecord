@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>车辆违规查询</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+        <link rel="stylesheet" href="https://lib.sinaapp.com/js/bootstrap/4.2.1/css/bootstrap.min.css">
+		<link href="plugins/css/icons.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body bgcolor="#d0d0d0">
+		<div class="page" id="app">
+			<div class="nav-left">
+				<div class="navDiv">
+					<div class="navName">导航</div>
+					<div class="nav-list">
+						<ul>
+							<li class="nav-tab a_active waves-effect">
+								<a href="html/home.html" class="li-a active" target="iframe"><i class='bx bx-home-smile'></i> 主页
+								</a>
+							</li>
+							<!-- <li class="nav-tab">
+								<a href="#" class="li-a"><i class='bx bx-home-smile'></i> 设备管理</a>
+							</li> -->
+							<li class="nav-tab nav-ul">
+								<a href="html/add.html" class="li-a" target="iframe"><i class='bx bx-layer'></i> 信息添加
+								</a>
+							</li>
+						</ul> 
+					</div>
+				</div>
+			</div>
+			<div class="nav-right"> 
+				<div class="nav-top">
+					车辆违章查询系统
+				</div>
+				<div class="content-page" style="overflow: hidden">
+					<iframe name="iframe" width="100%" height="100%" frameborder="0" 
+					src="html/home.html"></iframe>
+				</div>
+			</div>
+		</div>
+		<!-- <script src="js/vue.min.js"></script> -->
+        <script src="https://s1.pstatp.com/cdn/expire-1-M/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				let navflag = false;
+				$('.nav-tab').click(function() {
+					$(this).siblings().each(function() {
+						$(this).removeClass('a_active');
+						// $(this).removeClass('a_active');
+						$(this).find('.nav-box').css('height', '0')
+						//关闭右侧箭头
+						if ($(this).attr('class').indexOf('nav-ul') != -1) {
+							$(this).find('.bx-chevron-right').css('transform', 'rotateZ(0deg)')
+							$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+							$(this).removeClass('nav-show')
+							// $(this).find('div').removeClass('nav-box')
+						}
+					})
+					//当前选中
+					$(this).addClass('a_active')
+					$(this).find('.li-a').addClass('active')
+					// 打开右侧箭头
+					$(this).find('.bx-chevron-right').css('transform', 'rotateZ(90deg)')
+					$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+					$(this).addClass('nav-show')
+					// $(this).find('div').addClass('nav-box')
+				})
+				/* 二级菜单a点击事件 */
+				$(".li-a-a").click(function() {
+					$(".li-a-a").each(function() {
+						$(this).removeClass('active-li-a');
+					})
+					$(this).addClass('active-li-a');
+				})
+			})
+			// const vue = new Vue({
+			// 	el:'#app',
+			// 	data:{
+
+			// 	},
+			// 	methods:{
+			// 		liCli(){
+
+			// 		}
+			// 	}
+			// })
+		</script>
+	</body>
+</html>
